@@ -9,6 +9,8 @@ export interface IFeature{
     types: any;
     id: string;
     name: string;
+    number:string;
+    image:string;
 }
 
 

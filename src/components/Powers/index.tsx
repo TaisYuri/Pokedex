@@ -20,7 +20,7 @@ export const Powers = ({ dataPoke }: IPowers) => {
             <Title>Resistant</Title>
             <Shadow radius={9}>
                 <Card>
-                    <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1616/1616442.png' }} style={{ width: 70, height: 70 }} />
+                    <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1616/1616442.png' }} style={{ width: 50, height: 50 }} />
                     <Info>
                         {dataPoke?.resistant !== undefined && dataPoke?.resistant.map((item: object, index: number) =>
                             <TextInfo key={`${index}+${item}`}>{item}</TextInfo>                            
@@ -32,7 +32,7 @@ export const Powers = ({ dataPoke }: IPowers) => {
             <Title>Weaknesses</Title>
             <Shadow radius={9}>
                 <Card>
-                    <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1616/1616468.png' }} style={{ width: 70, height: 70 }} />
+                    <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1616/1616468.png' }} style={{ width: 50, height: 50 }} />
                     <Info>
                         {dataPoke?.weaknesses !== undefined && dataPoke?.weaknesses.map((item: object, index: number) =>
                             <TextInfo key={`${index}+${item}`}>{item}</TextInfo>

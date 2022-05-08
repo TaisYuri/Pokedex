@@ -62,7 +62,7 @@ query Pokemon($name: String) {
 `
 export const GET_LIST_TOP_POKEMONS = gql`
 query GetList{
-	pokemons(first: 50){
+	pokemons(first: 80){
 		id
 		number
 		name

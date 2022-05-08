@@ -1,17 +1,18 @@
 import { Animated } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
     flex-direction: row;
     justify-content: space-around;
-    width: 70px;
+    width: ${RFValue(70)}px;
     align-self: center;
-    margin-top: 8px;
+    margin-top: ${RFValue(8)}px;
 `;
 
 export const DotAnimated = styled(Animated.View)`
-    width: 14px;
-    height: 14px;
-    border-radius:7px;
+    width: ${RFValue(12)}px;
+    height: ${RFValue(12)}px;
+    border-radius:${RFValue(6)}px;
 `;
 

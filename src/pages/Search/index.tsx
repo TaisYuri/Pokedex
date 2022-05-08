@@ -23,7 +23,7 @@ export function Search() {
         if (!data) return <Text>Not found</Text>;
 
         dataPoke = data !== undefined ? data.pokemon : []
-        console.log(dataPoke);
+
     }
 
     getPoke(input)

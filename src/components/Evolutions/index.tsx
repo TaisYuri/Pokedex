@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Card, ContainerCard, Photo, Title, Number ,Name} from './styles'
+import { Card, ContainerCard, Photo, Title, Number ,Name, Information} from './styles'
 
 interface IEvolutions{
     namePoke: string
@@ -59,8 +59,10 @@ export function Evolutions({namePoke}:IEvolutions){
             <Card  >
             {evolutions.map( (item) => 
                 <ContainerCard key={item.number} onPress={() => navigation.navigate('FeaturePokemon', item)}>
-                    <Number>#{item.number}</Number> 
-                    <Name>{item.name}</Name> 
+                    <Information>
+                        <Number>#{item.number}</Number> 
+                        <Name>{item.name}</Name> 
+                    </Information>
                     <Photo source={{ uri: item.image}} style={{width: 100, height: 100}} resizeMode='contain'/>
                 </ContainerCard>
             )}

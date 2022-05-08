@@ -1,42 +1,40 @@
-import styled from "styled-components/native";
-
+import {RFValue} from 'react-native-responsive-fontsize';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    margin-right: 8px;
-    margin-left: 20px;
-    margin-top: 10px;    
+  margin-left: ${RFValue(20)}px;
 `;
 
 export const Card = styled.View`
-    margin-right: 8px;
-    margin-left: 20px;
-    align-items: center;
-    width:100% ;
-    flex-direction: row;
-    padding: 15px;
-    border-radius: 9px;
-    width:300px;
-    max-height: 250px;   
+  margin-right: ${RFValue(-5)}px;
+  margin-left: ${RFValue(20)}px;
+  align-items: center;
+  flex-direction: row;
+  padding: ${RFValue(15)}px;
+  border-radius: ${RFValue(9)}px;
+  width: ${RFValue(270)}px;
+  max-height: ${RFValue(250)}px;
 `;
 
 export const Info = styled.View`
-   margin-left: 20px;
-  max-width: 150px;
-
-
+  margin-left: ${RFValue(20)}px;
+  max-width: ${RFValue(150)}px;
+  height: ${RFValue(60)}px;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 export const TextInfo = styled.Text`
-    font-size: 14px;
-    color: #000;
-    margin-left: 7px;
-
-    `;
+  font-size: ${RFValue(14)}px;
+  color: #000;
+  margin-left: ${RFValue(7)}px;
+  width: 70px;
+`;
 
 export const Title = styled.Text`
-    font-size: 24px;
-    font-weight:bold ;
-    color: #000;
-    margin-top:20px ;
-    margin-bottom: 5px ;
+  font-size: ${RFValue(16)}px;
+  font-weight: bold;
+  color: #000;
+  margin-top: ${RFValue(15)}px;
+  margin-bottom: ${RFValue(5)}px;
 `;

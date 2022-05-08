@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Color, Header, Icons, Number, Title, Type, TypeBox, TypeSection } from './styes';
+import { Container, Header, Icons, Number, Title, Type, TypeBox, TypeSection } from './styes';
 import Feather from 'react-native-vector-icons/Feather'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native';
@@ -20,8 +20,7 @@ export const HeaderIntroduction = ({ dataPoke }: IIntroduction) => {
     const navigation = useNavigation();
 
     return (
-        <Color>
-        {console.log('Introduction', dataPoke.name)}
+        <Container>
             <Header source={require('../../assets/pokeball.png')} style={{ position: 'absolute' }} />
             <Icons>
                 <Feather name='arrow-left' color={'#333'} size={30} onPress={() => navigation.goBack()} />
@@ -38,6 +37,6 @@ export const HeaderIntroduction = ({ dataPoke }: IIntroduction) => {
                     </TypeBox>)
                 }
             </TypeSection>
-        </Color>
+        </Container>
     )
 }

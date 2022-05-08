@@ -15,6 +15,9 @@ import { BaseStats } from '../../components/BaseStats';
 import { Powers } from '../../components/Powers';
 import { Evolutions } from '../../components/Evolutions';
 import { Loading } from '../../components/Loading';
+import { Photo } from '../../components/Evolutions/styles';
+import { Shadow } from 'react-native-shadow-2';
+
 
 
 export function FeaturePokemon() {
@@ -24,14 +27,14 @@ export function FeaturePokemon() {
     const scrollX = useRef(new Animated.Value(0)).current;
     const route = useRoute<any>();
 
-    //CONEXÃO VIA API
-    async function GetImageSVG(name: string) {
-        await api.get(`${name}`.toLowerCase())
-            // await api.get(`${route.params?.id}`.toLowerCase())
-            .then((response) => {
-                setPokemonUser(response.data)
-            })
-    }
+    // //CONEXÃO VIA API
+    // async function GetImageSVG(name: string) {
+    //     await api.get(`${name}`.toLowerCase())
+    //         // await api.get(`${route.params?.id}`.toLowerCase())
+    //         .then((response) => {
+    //             setPokemonUser(response.data)
+    //         })
+    // }
 
     //CONEXÃO VIA APOLLO
     const getPoke = (name: string) => {
@@ -40,22 +43,23 @@ export function FeaturePokemon() {
         if (!data) return <Text>Not found</Text>;
 
         dataPoke = data !== undefined ? data.pokemon : []
-        // console.log(dataPoke);
+        console.log(dataPoke);
     }
 
 
-    GetImageSVG(`${route.params?.name}`)
+    // GetImageSVG(`${route.params?.name}`)
     getPoke(`${route.params?.name}`)
-
 
     return (
         <Container >
             <HeaderIntroduction dataPoke={dataPoke} />
-
+         
             {/* IMAGEM DO POKEMON    */}
-            <View />
-            <SvgUri width={240} height={240} uri={pokemonUser?.sprites.other.dream_world.front_default} strokeWidth="1" stroke="rgb(0,0,0, 0.2)" style={{ zIndex: 99, alignSelf: 'center' }} />
-
+            {/* <SvgUri width={240} height={240} uri={pokemonUser?.sprites.other.dream_world.front_default} strokeWidth="1" stroke="rgb(0,0,0, 0.2)" style={{ zIndex: 99, alignSelf: 'center' }} /> */}
+            <View style={{marginVertical: 15}}>
+            <Photo source={{ uri: dataPoke.image}} style={{width: 200, height: 200, zIndex: 99, alignSelf: 'center' }} resizeMode='contain'/>
+            </View>
+            <Shadow radius={30} distance={9}>
             <Box>
                 <Indicator data={Cards} scrollX={scrollX} />
                 <ScrollView
@@ -64,13 +68,12 @@ export function FeaturePokemon() {
                     onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], { useNativeDriver: false, })}
                     pagingEnabled
                 >
-
                     <View style={{ flexDirection: 'row' }}>
-                        <View style={{ width: (Dimensions.get('window').width - 40) }}>
+                        <View style={{ width: (Dimensions.get('window').width -50 ) }}>
                             <CardMaxMin dataPoke={dataPoke} />
                             <BaseStats dataPoke={dataPoke} />
-                        </View>
-                        <View>
+                        </View >
+                        <View style={{ width: (Dimensions.get('window').width -38 ) }}>
                             <Powers dataPoke={dataPoke} />
                         </View>
                         <View style={{ width: Dimensions.get('window').width, paddingLeft: 15 }}>
@@ -80,6 +83,7 @@ export function FeaturePokemon() {
 
                 </ScrollView>
             </Box>
+            </Shadow>
         </Container>
     );
 }

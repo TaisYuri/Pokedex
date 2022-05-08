@@ -1,7 +1,8 @@
+import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-    padding-top: 20px;
+    padding-top: ${RFValue(20)}px;
     align-items: center;
     flex: 1;
     /* background-color: rgb(16, 3, 63); */
@@ -11,35 +12,35 @@ export const Container = styled.View`
 export const Card = styled.View`  
     align-items: center;
     background-color:#FFF;
-    border-radius: 9px;
-    padding-top: 20px;
-    padding-right: 16px;
-    padding-left: 8px;
-    height: 420px;
-    width:280px ;
+    border-radius: ${RFValue(9)}px;
+    padding-top: ${RFValue(20)}px;
+    padding-right: ${RFValue(16)}px;
+
+    height: ${RFValue(400)}px;
+    width:${RFValue(260)}px ;
 
     `;
 
 export const Name = styled.Text`
-    font-size: 38px;
+    font-size: ${RFValue(38)}px;
     font-weight: bold;    
     color: #000;
 `;
 
 export const Number = styled.Text`
-    font-size: 20px;
+    font-size: ${RFValue(20)}px;
     font-weight: bold;
     align-self: flex-end;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: ${RFValue(8)}px;
+    padding-bottom: ${RFValue(8)}px;
     color: #000;
 `;
 
 export const TypeBox = styled.View`
     background-color: rgba(96,226,200, 0.9);
-    padding: 8px 16px;
-    border-radius: 20px;
-    margin-bottom: 8px;   
+    padding: ${RFValue(8)}px ${RFValue(16)}px;
+    border-radius: ${RFValue(20)}px;
+    margin-bottom: ${RFValue(8)}px;   
     flex-direction: row ;
       
 `;
@@ -47,52 +48,52 @@ export const Type = styled.Text`
     text-align: center;
     color: #000;
     font-weight: bold;
-    font-size: 12px;    
+    font-size: ${RFValue(12)}px;    
 `;
 
 export const Image = styled.Image`
-    width: 200px;
-    height: 200px; 
-    margin-top: 20px ;
+    width: ${RFValue(180)}px;
+    height: ${RFValue(180)}px; 
+    margin-top: ${RFValue(20)}px ;
 `;
 
 export const Logo = styled.Image`
-    width: 240px;
-    height: 90px;
-    margin-bottom: 100px; 
+    width: ${RFValue(240)}px;
+    height: ${RFValue(90)}px;
+    margin-bottom: ${RFValue(100)}px; 
 `;
 
 
 export const ButtonGo = styled.TouchableOpacity`
     background-color: #E52246;
     width: 40%;
-    border-radius: 20px;
-    margin-top: 35px;
-    margin-left: 50px;
+    border-radius: ${RFValue(20)}px;
+    margin-top: ${RFValue(35)}px;
+    margin-left: ${RFValue(50)}px;
 `;
 
 export const TextButton = styled.Text`
     color:  #FFF;
-    font-size: 23px;
+    font-size: ${RFValue(23)}px;
     font-weight: bold;
-    padding: 8px 16px;
+    padding: ${RFValue(8)}px ${RFValue(16)}px;
     text-align: center;
 `;
 export const Localization = styled.View`
     flex-direction: row;
     position: absolute;
-    bottom: 5px;
-    left: 5px;
+    bottom: ${RFValue(5)}px;
+    left: ${RFValue(5)}px;
 `;
 
 export const Pointer = styled.Image`
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: ${RFValue(40)}px;
+    height: ${RFValue(40)}px;
+    margin-right: ${RFValue(10)}px;
 `;
 
 export const LocalText = styled.Text`
     color:  #FFF;
-    font-size: 16px;
-    max-width: 170px;
+    font-size: ${RFValue(16)}px;
+    max-width: ${RFValue(170)}px;
 `;
